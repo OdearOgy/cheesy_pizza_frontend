@@ -1,0 +1,29 @@
+.menu {
+	text-align: center;
+	display: grid;
+	row-gap: 5rem;
+	justify-content: center;
+	justify-items: center;
+	margin: 4rem auto;
+}
+
+.title {
+	font-size: 5rem;
+	font-weight: 700;
+	text-shadow: 0.3rem 0.4rem 0.3rem var(--black);
+}
+
+.items {
+	display: grid;
+	justify-content: start;
+	grid-template-columns: repeat(3, 1fr);
+	row-gap: 15rem;
+	max-width: 65vw;
+	margin: 5rem auto;
+}
+
+.show__menu {
+	border: 0.2rem solid var(--light-red-orange);
+	background: transparent;
+	padding: 1rem 3rem;
+}
