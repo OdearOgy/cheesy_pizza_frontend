@@ -4,7 +4,6 @@ const LandingPage = () => {
 	return (
 		<>
 			<Header />
-
 			<Menu />
 		</>
 	);

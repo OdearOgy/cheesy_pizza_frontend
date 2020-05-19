@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toggle } from '../features/cart/cartSlice';
 import { Cart } from '../features/cart/Cart';
-import IconButton from './IconButton';
 
 import { NavbarStls as styles } from '../styles';
 import Logo from '../assets/images';
