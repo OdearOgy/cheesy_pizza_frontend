@@ -6,4 +6,4 @@ import CustomButton from './CustomButton';
 // Landing page sections
 import Header from './Header';
 import Menu from './Menu';
-export { Header, MenuItem, CustomButton, IconButton, Navbar, Menu };
+export { Header, MenuItem, CustomButton, Navbar, Menu };
