@@ -1,7 +1,7 @@
 .custom__btn {
 	background: var(--red-orange-gradient);
 	color: var(--white);
-	padding: 2rem 3rem;
+	padding: 1rem 3rem;
 	border: none;
 	border-radius: 15rem;
 	font-size: 1.8rem;

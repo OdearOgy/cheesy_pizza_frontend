@@ -1,9 +1,9 @@
 // Components
-import Header from './Header';
+import Navbar from './Navbar';
 import MenuItem from './MenuItem';
 import CustomButton from './CustomButton';
 
 // Landing page sections
-import Landing from './Landing';
+import Header from './Header';
 import Menu from './Menu';
-export { Header, MenuItem, CustomButton, Landing, Menu };
+export { Header, MenuItem, CustomButton, IconButton, Navbar, Menu };

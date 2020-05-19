@@ -1,10 +1,10 @@
 import React from 'react';
-import { Landing, Menu } from '../components';
-
+import { Header, Menu } from '../components';
 const LandingPage = () => {
 	return (
 		<>
-			<Landing />
+			<Header />
+
 			<Menu />
 		</>
 	);

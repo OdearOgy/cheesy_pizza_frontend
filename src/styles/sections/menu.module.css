@@ -18,6 +18,7 @@
 	justify-content: start;
 	grid-template-columns: repeat(3, 1fr);
 	row-gap: 15rem;
+	column-gap: 10rem;
 	max-width: 65vw;
 	margin: 5rem auto;
 }

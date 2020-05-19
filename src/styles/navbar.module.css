@@ -17,9 +17,11 @@ a {
 	font-size: 3.5rem;
 	color: var(--white);
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	width: 30rem;
+}
+
+.header__logo img {
+	width: 10rem;
 }
 
 .header__links {
@@ -31,4 +33,8 @@ a {
 
 .link {
 	color: var(--white);
+}
+
+.header__cart {
+	position: relative;
 }

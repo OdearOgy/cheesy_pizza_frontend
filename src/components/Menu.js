@@ -6,30 +6,35 @@ import CustomButton from './CustomButton';
 
 const items = [
 	{
+		id: 0,
 		img: Pizza_2,
 		name: 'Pizza Pepperoni',
 		description: 'Delicious Pizza Pepperoni, all the cheesiness you need.',
 		price: 30,
 	},
 	{
+		id: 1,
 		img: Pizza_2,
 		name: 'Pizza Pepperoni 1',
 		description: 'Delicious Pizza Pepperoni, all the cheesiness you need.',
 		price: 40,
 	},
 	{
+		id: 2,
 		img: Pizza_2,
 		name: 'Pizza Pepperoni 2',
 		description: 'Delicious Pizza Pepperoni, all the cheesiness you need.',
 		price: 50,
 	},
 	{
+		id: 3,
 		img: Pizza_2,
 		name: 'Pizza Pepperoni 3',
 		description: 'Delicious Pizza Pepperoni, all the cheesiness you need.',
 		price: 50,
 	},
 	{
+		id: 4,
 		img: Pizza_2,
 		name: 'Pizza Pepperoni 4',
 		description: 'Delicious Pizza Pepperoni, all the cheesiness you need.',

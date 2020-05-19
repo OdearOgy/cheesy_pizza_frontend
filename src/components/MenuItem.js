@@ -1,8 +1,13 @@
 import React from 'react';
 import { MenuItemStls as styles } from '../styles';
 import CustomButton from './CustomButton';
-const MenuItem = (props) => {
+
+import { useDispatch } from 'react-redux';
+import { add as addToCart } from '../features/cart/cartSlice';
+
+function MenuItem(props) {
 	const { img, name, description, price } = props;
+	const dispatch = useDispatch();
 
 	return (
 		<div className={styles.item}>
@@ -19,9 +24,13 @@ const MenuItem = (props) => {
 
 				<div className={styles.quantity}></div>
 			</div>
-			<CustomButton className={styles.item__btn} content='Add to Cart' />
+			<CustomButton
+				handleClick={() => dispatch(addToCart({ item: { ...props } }))}
+				className={styles.item__btn}
+				content='Add to Cart'
+			/>
 		</div>
 	);
-};
+}
 
 export default MenuItem;
