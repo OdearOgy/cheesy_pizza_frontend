@@ -1,17 +1,31 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialStorageCart = JSON.parse(localStorage.getItem('cart'));
+
+function calculateTotalPrice(cartItems) {
+	let totalPrice = 0;
+	if (cartItems) {
+		cartItems.forEach((item) => {
+			totalPrice += item.price;
+		});
+	} else {
+		totalPrice = 0;
+	}
+	return totalPrice;
+}
+
 export const cartSlice = createSlice({
 	name: 'cart',
 	initialState: {
-		items: JSON.parse(localStorage.getItem('cart')) || [],
-		totalPrice: 0,
+		items: initialStorageCart || [],
+		totalPrice: calculateTotalPrice(initialStorageCart),
 		isOpen: false,
 	},
 
 	reducers: {
 		add: (state, action) => {
 			state.items.push(action.payload.item);
-			state.totalPrice += action.payload.item.price;
+			state.totalPrice = calculateTotalPrice(state.items);
 
 			localStorage.setItem('cart', JSON.stringify(state.items));
 		},
@@ -19,7 +33,7 @@ export const cartSlice = createSlice({
 		remove: (state, action) => {
 			const index = state.items.findIndex((item) => item.id === action.payload.item.id);
 			state.items.splice(index, 1);
-			state.totalPrice -= action.payload.item.price;
+			state.totalPrice = calculateTotalPrice(state.items);
 
 			localStorage.setItem('cart', JSON.stringify(state.items));
 		},
@@ -35,7 +49,7 @@ export const cartSlice = createSlice({
 	},
 });
 
-export const { add, remove, toggle } = cartSlice.actions;
+export const { add, remove, toggle, clear } = cartSlice.actions;
 
 export const selectCart = (state) => state.cart.items;
 export const selectTotalPrice = (state) => state.cart.totalPrice;
