@@ -1,14 +1,15 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { toggle } from '../features/cart/cartSlice';
+import { toggle, selectCart } from '../features/cart/cartSlice';
 import { Cart } from '../features/cart/Cart';
-import { MdShoppingCart } from 'react-icons/md';
+import { MdShoppingCart, MdShoppingBasket } from 'react-icons/md';
 
 import { NavbarStls as styles } from '../styles';
 import Logo from '../assets/images';
 
 function Header() {
+	const cart = useSelector(selectCart);
 	const dispatch = useDispatch();
 	return (
 		<header className={styles.header}>
@@ -32,7 +33,8 @@ function Header() {
 			</nav>
 			<div className={styles.header__cart}>
 				<button className={styles.cart__btn} onClick={() => dispatch(toggle())}>
-					<MdShoppingCart />
+					<MdShoppingBasket />
+					<span className={styles.cart__counter}>{cart.length}</span>
 				</button>
 				<Cart />
 			</div>

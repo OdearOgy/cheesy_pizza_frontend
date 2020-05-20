@@ -75,13 +75,18 @@
 	height: 80%;
 }
 
+.item__text {
+	justify-self: flex-start;
+}
+
 .remove__btn {
 	background: var(--black);
+	color: currentColor;
 	border: none;
 	background: transparent;
 	cursor: pointer;
 	font-size: 2rem;
-	justify-self: end;
+	place-self: center end;
 }
 
 .total__info {

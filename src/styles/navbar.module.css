@@ -40,13 +40,31 @@ a {
 }
 
 .cart__btn {
-	background: transparent;
-	color: currentColor;
-	padding: 2rem;
-	border: none;
-	font-size: 2.5rem;
-	cursor: pointer;
-
 	display: grid;
 	place-items: center;
+	position: relative;
+
+	padding: 2rem;
+
+	cursor: pointer;
+	border: none;
+	background: transparent;
+	color: var(--light-red-orange);
+	filter: drop-shadow(0.5rem 0.5rem 0.5rem var(--black));
+	font-size: 4rem;
+}
+
+.cart__counter {
+	display: grid;
+	place-items: center;
+	position: absolute;
+	bottom: 15%;
+	right: 15%;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	background: var(--white);
+	color: currentColor;
+	font-size: 2rem;
+	font-weight: 600;
 }

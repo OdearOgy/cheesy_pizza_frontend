@@ -17,7 +17,9 @@ function CartItem({ item }) {
 			<div className={styles.item__text}>
 				<h4>{item.name}</h4>
 			</div>
-			<MdDelete className={styles.remove__btn} onClick={() => dispatch(removeFromCart({ item }))} />
+			<button className={styles.remove__btn} onClick={() => dispatch(removeFromCart({ item }))}>
+				<MdDelete />
+			</button>
 		</div>
 	);
 }
