@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Cart.module.css';
-import { CustomButton } from '../../components';
 import { MdDelete } from 'react-icons/md';
 
 import { useDispatch } from 'react-redux';

@@ -24,6 +24,11 @@ export const cartSlice = createSlice({
 			localStorage.setItem('cart', JSON.stringify(state.items));
 		},
 
+		clear: (state) => {
+			state.items = [];
+			localStorage.removeItem('cart');
+		},
+
 		toggle: (state) => {
 			state.isOpen = !state.isOpen;
 		},

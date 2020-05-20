@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toggle, selectCart } from '../features/cart/cartSlice';
 import { Cart } from '../features/cart/Cart';
-import { MdShoppingCart, MdShoppingBasket } from 'react-icons/md';
+import { MdShoppingBasket } from 'react-icons/md';
 
 import { NavbarStls as styles } from '../styles';
 import Logo from '../assets/images';

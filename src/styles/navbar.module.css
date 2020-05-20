@@ -33,6 +33,25 @@ a {
 
 .link {
 	color: var(--white);
+	filter: drop-shadow(0.5rem 0.5rem 0.5rem var(--black));
+	position: relative;
+}
+
+.link::after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 25%;
+	left: 51%;
+	right: 51%;
+	height: 0.2rem;
+	background: currentColor;
+	transition: all 0.3s 0.09s ease;
+}
+
+.link:hover::after {
+	left: 0;
+	right: 0;
 }
 
 .header__cart {

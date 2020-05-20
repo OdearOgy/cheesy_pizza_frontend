@@ -1,8 +1,8 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectCart, selectTotalPrice, selectOpenState } from './cartSlice';
 
-import { CustomButton, MenuItem } from '../../components';
+import { CustomButton } from '../../components';
 import styles from './Cart.module.css';
 import CartItem from './CartItem';
 
