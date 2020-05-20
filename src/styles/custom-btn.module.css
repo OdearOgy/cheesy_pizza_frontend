@@ -1,9 +1,13 @@
 .custom__btn {
-	background: var(--red-orange-gradient);
-	color: var(--white);
-	padding: 1rem 3rem;
-	border: none;
-	border-radius: 15rem;
-	font-size: 1.8rem;
-	cursor: pointer;
+  background: var(--red-orange-gradient);
+  color: var(--white);
+  padding: 1rem 3rem;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  border-radius: 15rem;
+  -webkit-border-radius: 15rem;
+  -moz-border-radius: 15rem;
+  -ms-border-radius: 15rem;
+  -o-border-radius: 15rem;
 }

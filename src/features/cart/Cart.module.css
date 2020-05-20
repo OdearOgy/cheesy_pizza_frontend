@@ -9,12 +9,16 @@
 	transform: translate(0%, 10%);
 	min-width: 30vw;
 	min-height: 30vh;
-
 	padding: 2rem;
 	overflow: visible;
-	border-radius: 0.8rem;
 	background: var(--light-black);
 	filter: drop-shadow(0.6rem 0.4rem 0.5rem var(--black));
+	border-radius: 0.8rem;
+	-webkit-border-radius: 0.8rem;
+	-moz-border-radius: 0.8rem;
+	-ms-border-radius: 0.8rem;
+	-o-border-radius: 0.8rem;
+	-webkit-animation: open__cart 0.5s ease;
 	animation: open__cart 0.5s ease;
 }
 
@@ -25,12 +29,10 @@
 		opacity: 0;
 	}
 	50% {
-		opacity: 0.1;
+		opacity: 0;
 	}
 	100% {
 		opacity: 1;
-		width: 100%;
-		height: 100%;
 	}
 }
 
@@ -41,10 +43,14 @@
 	z-index: 2;
 	top: -2%;
 	right: 25%;
-	transform: translate(0%, -50%);
 	border-left: 2rem solid transparent;
 	border-right: 2rem solid transparent;
 	border-bottom: 2rem solid var(--light-black);
+	transform: translate(0%, -50%);
+	-webkit-transform: translate(0%, -50%);
+	-moz-transform: translate(0%, -50%);
+	-ms-transform: translate(0%, -50%);
+	-o-transform: translate(0%, -50%);
 }
 
 .cart__closed {

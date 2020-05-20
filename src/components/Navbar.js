@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { toggle, selectCart } from '../features/cart/cartSlice';
+import { toggle as toggleCart, selectCart } from '../features/cart/cartSlice';
 import { Cart } from '../features/cart/Cart';
 import { MdShoppingBasket } from 'react-icons/md';
 
@@ -32,7 +32,7 @@ function Header() {
 				</Link>
 			</nav>
 			<div className={styles.header__cart}>
-				<button className={styles.cart__btn} onClick={() => dispatch(toggle())}>
+				<button className={styles.cart__btn} onClick={() => dispatch(toggleCart())}>
 					<MdShoppingBasket />
 					<span className={styles.cart__counter}>{cart.length}</span>
 				</button>

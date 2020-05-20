@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectCart, selectTotalPrice, selectOpenState, toggle } from './cartSlice';
+import { selectCart, selectTotalPrice, selectOpenState, toggle as toggleCart } from './cartSlice';
 import CartItem from './CartItem';
 
 import { CustomButton } from '../../components';
@@ -18,7 +18,7 @@ export function Cart() {
 			<button
 				className={styles.close__btn}
 				onClick={() => {
-					dispatch(toggle());
+					dispatch(toggleCart());
 				}}>
 				<MdClose />
 			</button>
