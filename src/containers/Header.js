@@ -1,5 +1,6 @@
 import React from 'react';
-import CustomButton from './CustomButton';
+import { CustomButton } from '../components';
+
 import { HeaderStls as styles } from '../styles';
 import { Pizza_1 } from '../assets/images';
 

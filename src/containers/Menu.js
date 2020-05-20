@@ -1,10 +1,10 @@
-import React from 'react';
-import MenuItem from './MenuItem';
+import React, { useEffect, useState } from 'react';
+import { MenuItem, CustomButton } from '../components';
+
 import { MenuStls as styles } from '../styles';
 import { Pizza_2 } from '../assets/images';
-import CustomButton from './CustomButton';
 
-const items = [
+const orders = [
 	{
 		id: 0,
 		img: Pizza_2,
@@ -43,8 +43,16 @@ const items = [
 ];
 
 const Menu = () => {
+	const [items, setItems] = useState([]);
+
+	useEffect(() => {
+		setTimeout(() => {
+			setItems(orders);
+		}, 1000);
+	}, []);
+
 	return (
-		<div className={styles.menu}>
+		<section className={styles.menu}>
 			<h2 className={styles.title}>The Cheesy Menu</h2>
 			{items.length > 0 ? (
 				<>
@@ -58,7 +66,7 @@ const Menu = () => {
 			) : (
 				<h3>Nothing to display</h3>
 			)}
-		</div>
+		</section>
 	);
 };
 

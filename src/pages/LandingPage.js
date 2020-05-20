@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Menu } from '../components';
+import { Header, Menu } from '../containers';
 const LandingPage = () => {
 	return (
 		<>
