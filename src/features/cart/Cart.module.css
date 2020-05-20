@@ -7,15 +7,31 @@
 	right: 0;
 	top: 80%;
 	transform: translate(0%, 10%);
-
-	padding: 2rem;
 	min-width: 30vw;
 	min-height: 30vh;
+
+	padding: 2rem;
 	overflow: visible;
-	transition: all 0.2s linear;
 	border-radius: 0.8rem;
 	background: var(--light-black);
 	filter: drop-shadow(0.6rem 0.4rem 0.5rem var(--black));
+	animation: open__cart 0.5s ease;
+}
+
+@keyframes open__cart {
+	0% {
+		min-width: 0;
+		min-height: 0;
+		opacity: 0;
+	}
+	50% {
+		opacity: 0.1;
+	}
+	100% {
+		opacity: 1;
+		width: 100%;
+		height: 100%;
+	}
 }
 
 .cart__open::before {
@@ -79,7 +95,8 @@
 	justify-self: flex-start;
 }
 
-.remove__btn {
+.remove__btn,
+.close__btn {
 	background: var(--black);
 	color: currentColor;
 	border: none;
@@ -97,4 +114,11 @@
 
 .order__btn {
 	transform: translate(0, 100%);
+}
+
+.close__btn {
+	font-size: 3rem;
+	position: absolute;
+	top: 5%;
+	right: 5%;
 }

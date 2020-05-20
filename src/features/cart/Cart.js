@@ -1,18 +1,27 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { selectCart, selectTotalPrice, selectOpenState } from './cartSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectCart, selectTotalPrice, selectOpenState, toggle } from './cartSlice';
+import CartItem from './CartItem';
 
 import { CustomButton } from '../../components';
 import styles from './Cart.module.css';
-import CartItem from './CartItem';
+import { MdClose } from 'react-icons/md';
 
 export function Cart() {
 	const cart = useSelector(selectCart);
 	const totalPrice = useSelector(selectTotalPrice);
 	const isOpen = useSelector(selectOpenState);
+	const dispatch = useDispatch();
 
 	return (
 		<div className={isOpen ? styles.cart__open : styles.cart__closed}>
+			<button
+				className={styles.close__btn}
+				onClick={() => {
+					dispatch(toggle());
+				}}>
+				<MdClose />
+			</button>
 			<h2 className={styles.cart__title}> Cart </h2>
 			{cart.length > 0 ? (
 				<>
