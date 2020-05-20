@@ -7,7 +7,7 @@ a {
 	display: grid;
 	align-items: center;
 	justify-content: space-between;
-	grid-template-columns: 0.5fr 1fr 0.5fr;
+	grid-template-columns: 0.5fr 1fr 0.2fr;
 	font-size: 2rem;
 	padding: 2rem 7rem;
 }
