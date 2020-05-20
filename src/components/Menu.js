@@ -46,12 +46,18 @@ const Menu = () => {
 	return (
 		<div className={styles.menu}>
 			<h2 className={styles.title}>The Cheesy Menu</h2>
-			<div className={styles.items}>
-				{items.map((item, key) => (
-					<MenuItem key={key} {...item} />
-				))}
-			</div>
-			<CustomButton className={styles.show__menu} content='Show more' />
+			{items.length > 0 ? (
+				<>
+					<div className={styles.items}>
+						{items.map((item, key) => (
+							<MenuItem key={key} {...item} />
+						))}
+					</div>
+					<CustomButton className={styles.show__menu} content='Show more' />
+				</>
+			) : (
+				<h3>Nothing to display</h3>
+			)}
 		</div>
 	);
 };

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toggle } from '../features/cart/cartSlice';
 import { Cart } from '../features/cart/Cart';
+import { MdShoppingCart } from 'react-icons/md';
 
 import { NavbarStls as styles } from '../styles';
 import Logo from '../assets/images';
@@ -30,9 +31,10 @@ function Header() {
 				</Link>
 			</nav>
 			<div className={styles.header__cart}>
-				<button onClick={() => dispatch(toggle())}>Open Cart</button>
+				<button className={styles.cart__btn} onClick={() => dispatch(toggle())}>
+					<MdShoppingCart />
+				</button>
 				<Cart />
-				{/* <h4>+374 (12) 12312-12312</h4> */}
 			</div>
 		</header>
 	);
