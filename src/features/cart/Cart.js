@@ -15,14 +15,16 @@ export function Cart() {
 
 	return (
 		<div className={isOpen ? styles.cart__open : styles.cart__closed}>
-			<button
-				className={styles.close__btn}
-				onClick={() => {
-					dispatch(toggleCart());
-				}}>
-				<MdClose />
-			</button>
-			<h2 className={styles.cart__title}> Cart </h2>
+			<div className={styles.cart__header}>
+				<button
+					className={styles.close__btn}
+					onClick={() => {
+						dispatch(toggleCart());
+					}}>
+					<MdClose />
+				</button>
+				<h2 className={styles.cart__title}> Cart </h2>
+			</div>
 			{cart.length > 0 ? (
 				<>
 					<div className={styles.cart__items}>
@@ -30,11 +32,13 @@ export function Cart() {
 							<CartItem key={key} item={item} />
 						))}
 					</div>
-					<div className={styles.total__info}>
-						<span>Total: </span>
-						<span className={styles.total__price}> ${totalPrice} </span>
+					<div className={styles.cart__footer}>
+						<div className={styles.total__info}>
+							<span>Total: </span>
+							<span className={styles.total__price}> ${totalPrice} </span>
+						</div>
+						<CustomButton className={styles.order__btn} content='Order' />
 					</div>
-					<CustomButton className={styles.order__btn} content='Order' />
 				</>
 			) : (
 				<h4 className={styles.cart__empty}>Your cart is empty</h4>
