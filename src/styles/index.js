@@ -4,10 +4,11 @@ import base from './_base.css';
 import NavbarStls from './navbar.module.css';
 import MenuItemStls from './menu-item.module.css';
 import CustomButtonStls from './custom-btn.module.css';
+import QuantityBarStls from './quantity-bar.module.css';
 
-// Landing page sections
+// containers styles
 import HeaderStls from './sections/header.module.css';
 import MenuStls from './sections/menu.module.css';
 
 export default base;
-export { NavbarStls, MenuItemStls, CustomButtonStls, HeaderStls, MenuStls };
+export { NavbarStls, MenuItemStls, CustomButtonStls, QuantityBarStls, HeaderStls, MenuStls };

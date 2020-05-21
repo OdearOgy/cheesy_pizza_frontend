@@ -1,0 +1,18 @@
+.quantity {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: .5rem;
+}
+
+.quantity span {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.quantity__btn {
+  border: none;
+  background: transparent;
+  color: currentColor;
+  cursor: pointer;
+  padding: .5rem;
+}

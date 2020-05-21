@@ -6,7 +6,7 @@ function calculateTotalPrice(cartItems) {
 	let totalPrice = 0;
 	if (cartItems) {
 		cartItems.forEach((item) => {
-			totalPrice += item.price;
+			totalPrice += item.price * item.quantity;
 		});
 	} else {
 		totalPrice = 0;
@@ -24,9 +24,17 @@ export const cartSlice = createSlice({
 
 	reducers: {
 		add: (state, action) => {
-			state.items.push(action.payload.item);
-			state.totalPrice = calculateTotalPrice(state.items);
+			const { item, quantity } = action.payload;
+			// if we're adding the same item, we're just gonna change the quantity
+			const index = state.items.findIndex((current) => current.id === item.id);
+			if (!index) {
+				state.items[index].quantity += quantity;
+			} else {
+				item.quantity = quantity;
+				state.items.push(item);
+			}
 
+			state.totalPrice = calculateTotalPrice(state.items);
 			localStorage.setItem('cart', JSON.stringify(state.items));
 		},
 
@@ -35,6 +43,15 @@ export const cartSlice = createSlice({
 			state.items.splice(index, 1);
 			state.totalPrice = calculateTotalPrice(state.items);
 
+			localStorage.setItem('cart', JSON.stringify(state.items));
+		},
+
+		changeQuantity: (state, action) => {
+			const { item, quantity } = action.payload;
+			const index = state.items.findIndex((current) => current.id === item.id);
+
+			state.items[index].quantity = quantity;
+			state.totalPrice = calculateTotalPrice(state.items);
 			localStorage.setItem('cart', JSON.stringify(state.items));
 		},
 
@@ -49,7 +66,7 @@ export const cartSlice = createSlice({
 	},
 });
 
-export const { add, remove, toggle, clear } = cartSlice.actions;
+export const { add, remove, changeQuantity, toggle, clear } = cartSlice.actions;
 
 export const selectCart = (state) => state.cart.items;
 export const selectTotalPrice = (state) => state.cart.totalPrice;

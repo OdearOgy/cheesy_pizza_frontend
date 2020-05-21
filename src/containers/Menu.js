@@ -11,6 +11,8 @@ const orders = [
 		name: 'Pizza Pepperoni',
 		description: 'Delicious Pizza Pepperoni, all the cheesiness you need.',
 		price: 30,
+		quantity: 1,
+		slices: 6,
 	},
 	{
 		id: 1,
@@ -18,6 +20,8 @@ const orders = [
 		name: 'Pizza Pepperoni 1',
 		description: 'Delicious Pizza Pepperoni, all the cheesiness you need.',
 		price: 40,
+		quantity: 1,
+		slices: 6,
 	},
 	{
 		id: 2,
@@ -25,6 +29,8 @@ const orders = [
 		name: 'Pizza Pepperoni 2',
 		description: 'Delicious Pizza Pepperoni, all the cheesiness you need.',
 		price: 50,
+		quantity: 1,
+		slices: 6,
 	},
 	{
 		id: 3,
@@ -32,6 +38,8 @@ const orders = [
 		name: 'Pizza Pepperoni 3',
 		description: 'Delicious Pizza Pepperoni, all the cheesiness you need.',
 		price: 50,
+		quantity: 1,
+		slices: 6,
 	},
 	{
 		id: 4,
@@ -39,6 +47,8 @@ const orders = [
 		name: 'Pizza Pepperoni 4',
 		description: 'Delicious Pizza Pepperoni, all the cheesiness you need.',
 		price: 50,
+		quantity: 1,
+		slices: 6,
 	},
 ];
 

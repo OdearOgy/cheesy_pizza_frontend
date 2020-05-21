@@ -2,5 +2,5 @@
 import Navbar from './Navbar';
 import MenuItem from './MenuItem';
 import CustomButton from './CustomButton';
-
-export { MenuItem, CustomButton, Navbar };
+import QuantityBar from './QuantityBar';
+export { MenuItem, CustomButton, Navbar, QuantityBar };

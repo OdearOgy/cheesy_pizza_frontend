@@ -61,3 +61,19 @@
   -ms-transform: translate(-50%, 50%);
   -o-transform: translate(-50%, 50%);
 }
+
+.item__info {
+  display: grid;
+  grid-template-columns: repeat(3, .5fr);
+  align-items: center;
+  align-content: flex-start;
+  column-gap: 2rem;
+  margin: 0 0 2rem;
+  font-size: 2rem;
+}
+
+
+.slices {
+  display: flex;
+  justify-content: space-evenly;
+}

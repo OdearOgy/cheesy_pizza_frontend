@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectCart, selectTotalPrice, selectOpenState, toggle as toggleCart } from './cartSlice';
+import { selectCart, selectTotalPrice, selectOpenState, toggle as toggleCart, clear as clearCart } from './cartSlice';
 import CartItem from './CartItem';
 
 import { CustomButton } from '../../components';
@@ -37,7 +37,12 @@ export function Cart() {
 							<span>Total: </span>
 							<span className={styles.total__price}> ${totalPrice} </span>
 						</div>
-						<CustomButton className={styles.order__btn} content='Order' />
+						<div className={styles.cart__btns}>
+							<button className={styles.clear__btn} onClick={() => dispatch(clearCart())}>
+								Clear Cart
+							</button>
+							<CustomButton className={styles.order__btn} content='Order' />
+						</div>
 					</div>
 				</>
 			) : (
