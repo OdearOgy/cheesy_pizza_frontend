@@ -12,7 +12,6 @@ export function Cart() {
 	const totalPrice = useSelector(selectTotalPrice);
 	const isOpen = useSelector(selectOpenState);
 	const dispatch = useDispatch();
-
 	return (
 		<div className={isOpen ? styles.cart__open : styles.cart__closed}>
 			<div className={styles.cart__header}>
@@ -29,7 +28,7 @@ export function Cart() {
 				<>
 					<div className={styles.cart__items}>
 						{cart.map((item, key) => (
-							<CartItem key={key} item={item} />
+							<CartItem key={key} item={item} quantity={item.quantity} />
 						))}
 					</div>
 					<div className={styles.cart__footer}>

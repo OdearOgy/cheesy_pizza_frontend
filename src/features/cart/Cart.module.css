@@ -116,6 +116,10 @@
 	grid-area: delete;
 }
 
+.name {
+	line-height: 1.5;
+}
+
 .cart__footer {
 	grid-area: footer;
 	position: relative;

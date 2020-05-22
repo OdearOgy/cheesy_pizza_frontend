@@ -14,6 +14,8 @@ function calculateTotalPrice(cartItems) {
 	return totalPrice;
 }
 
+const getItemIndex = (items, slug) => items.findIndex((item) => item.slug === slug);
+
 export const cartSlice = createSlice({
 	name: 'cart',
 	initialState: {
@@ -25,9 +27,11 @@ export const cartSlice = createSlice({
 	reducers: {
 		add: (state, action) => {
 			const { item, quantity } = action.payload;
-			// if we're adding the same item, we're just gonna change the quantity
-			const index = state.items.findIndex((current) => current.id === item.id);
-			if (!index) {
+			const index = getItemIndex(state.items, item.slug);
+
+			// if the item is already in a cart,
+			// we're just gonna increment the quantity
+			if (!!state.items[index]) {
 				state.items[index].quantity += quantity;
 			} else {
 				item.quantity = quantity;
@@ -39,16 +43,17 @@ export const cartSlice = createSlice({
 		},
 
 		remove: (state, action) => {
-			const index = state.items.findIndex((item) => item.id === action.payload.item.id);
+			const { slug } = action.payload;
+			const index = getItemIndex(state.items, slug);
+
 			state.items.splice(index, 1);
 			state.totalPrice = calculateTotalPrice(state.items);
-
 			localStorage.setItem('cart', JSON.stringify(state.items));
 		},
 
 		changeQuantity: (state, action) => {
 			const { item, quantity } = action.payload;
-			const index = state.items.findIndex((current) => current.id === item.id);
+			const index = getItemIndex(state.items, item.slug);
 
 			state.items[index].quantity = quantity;
 			state.totalPrice = calculateTotalPrice(state.items);

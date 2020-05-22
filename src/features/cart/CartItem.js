@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from './Cart.module.css';
 import { MdDelete } from 'react-icons/md';
 
@@ -6,19 +6,15 @@ import { useDispatch } from 'react-redux';
 import { remove as removeFromCart, changeQuantity } from './cartSlice';
 import { QuantityBar } from '../../components';
 
-function CartItem({ item }) {
+function CartItem({ item, quantity }) {
 	const dispatch = useDispatch();
 
-	const [itemQuantity, setItemQuantity] = useState(item.quantity);
-
 	const changeItemQuantity = (val) => {
-		if (itemQuantity + val <= 0) {
-			setItemQuantity(1);
+		if (quantity + val <= 0) {
+			dispatch(removeFromCart(item));
 		} else {
-			setItemQuantity(itemQuantity + val);
+			dispatch(changeQuantity({ item, quantity: quantity + val }));
 		}
-
-		dispatch(changeQuantity({ item, quantity: itemQuantity }));
 	};
 
 	return (
@@ -27,10 +23,10 @@ function CartItem({ item }) {
 				<img src={item.img} alt={`${item.name} logo`} />
 			</div>
 			<div className={styles.item__text}>
-				<h4>{item.name}</h4>
-				<QuantityBar quantity={itemQuantity} changeQuantity={changeItemQuantity} />
+				<h4 className={styles.name}>{item.name}</h4>
+				<QuantityBar quantity={quantity} changeQuantity={changeItemQuantity} />
 			</div>
-			<button className={styles.remove__btn} onClick={() => dispatch(removeFromCart({ item }))}>
+			<button className={styles.remove__btn} onClick={() => dispatch(removeFromCart({ slug: item.slug }))}>
 				<MdDelete />
 			</button>
 		</div>

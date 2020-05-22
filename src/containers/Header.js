@@ -9,7 +9,7 @@ const Header = () => {
 		<section className={styles.head}>
 			<div className={styles.head__text}>
 				<h1 className={styles.title}>The Right Pizzas</h1>
-				<p className={styles.description}>Pizzas need to be cheesy, and a lot.</p>
+				<p className={styles.description}>Pizzas need to be cheesy and a lot.</p>
 				<CustomButton content='Order Now' />
 			</div>
 			<div className={styles.head__img}>
