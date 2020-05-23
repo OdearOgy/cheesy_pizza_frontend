@@ -1,10 +1,11 @@
 import React from 'react';
-import { Header, Menu } from '../containers';
+import { Header, Menu, About } from '../containers';
 const LandingPage = () => {
 	return (
 		<>
 			<Header />
 			<Menu />
+			<About />
 		</>
 	);
 };

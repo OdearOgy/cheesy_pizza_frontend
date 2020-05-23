@@ -4,12 +4,14 @@
 	max-width: 30rem;
 	max-height: 45rem;
 	height: 100%;
-	background: var(--black);
+	background: var(--light-black);
 	margin: 2rem;
 	padding: 2rem 4rem;
 	border-radius: 1.5rem;
 	position: relative;
 	font-size: 1.5rem;
+	filter: drop-shadow(0.2rem 0.2rem 0.4rem var(--light-black));
+	-webkit-filter: drop-shadow(0.2rem 0.2rem 0.4rem var(--light-black));
 }
 
 .item__img {
