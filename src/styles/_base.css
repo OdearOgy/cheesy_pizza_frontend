@@ -5,32 +5,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700;800&display=swap');
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  outline: none;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	outline: none;
 }
 
 :root {
-  font-size: 62.5%;
-  --white: #ffffff;
-  --black: #292929;
-  --light-black: #3a373e;
-  --light-red-orange: #e2842e;
-  --dark-red-orange: #bb5320;
-  --pale-yellow: #f3d18e;
+	font-size: 62.5%;
+	/* font-sizes */
 
-  --red-orange-gradient: linear-gradient(-90deg,
-      rgba(226, 132, 46, 1) 10%,
-      rgba(190, 86, 33, 1) 60%,
-      rgba(187, 83, 32, 1) 95%);
+	--h1: clamp(4.2rem, 10vw, 6.5rem);
+
+	--h2: clamp(2.5rem, 10vw, 5.5rem);
+
+	--h3: clamp(2rem, 10vw, 3rem);
+
+	--h4: clamp(0.8rem, 10vw, 2.5rem);
+
+	--small-text: clamp(0.8rem, 10vw, 2rem);
+
+	--tiny-text: clamp(0.5rem, 10vw, 1.4rem);
+
+	--white: #ffffff;
+	--black: #292929;
+	--light-black: #3a373e;
+	--light-red-orange: #e2842e;
+	--dark-red-orange: #bb5320;
+	--pale-yellow: #f3d18e;
+
+	--red-orange-gradient: linear-gradient(
+		-90deg,
+		rgba(226, 132, 46, 1) 10%,
+		rgba(190, 86, 33, 1) 60%,
+		rgba(187, 83, 32, 1) 95%
+	);
 }
 
 body {
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
-    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--light-black);
-  color: var(--white);
+	font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: var(--light-black);
+	color: var(--white);
 }

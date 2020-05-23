@@ -1,10 +1,9 @@
 .contact {
-	padding: 2rem 0;
 	position: relative;
 }
 
 .map {
-	margin: 2rem auto;
+	margin: 0 auto;
 	width: 100%;
 	border: none;
 	filter: drop-shadow(0.2rem 0.2rem 0.5rem var(--light-black));
@@ -50,19 +49,19 @@
 }
 
 .card__title {
-	font-size: 3rem;
-	line-height: 3;
+	font-size: var(--h2);
+	line-height: 2;
 }
 
 .title {
 	padding: 0.5rem;
-	font-size: 2.2rem;
+	font-size: var(--h4);
 	line-height: 2;
 }
 
 .description {
 	padding: 0.5rem 1.5rem 0.5rem 0.5rem;
-	font-size: 1.4rem;
+	font-size: var(--tiny-text);
 	line-height: 1.5;
 	font-weight: 600;
 }
@@ -76,5 +75,15 @@
 		-moz-transform: translate(-80%, -50%);
 		-ms-transform: translate(-80%, -50%);
 		-o-transform: translate(-80%, -50%);
+	}
+}
+
+@media (max-width: 640px) {
+	.contact__card {
+		padding: 1rem 2rem;
+	}
+
+	.map {
+		width: 95%;
 	}
 }

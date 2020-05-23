@@ -11,6 +11,19 @@ import HeaderStls from './sections/header.module.css';
 import MenuStls from './sections/menu.module.css';
 import AboutStls from './sections/about.module.css';
 import ContactStls from './sections/contact.module.css';
+import DeliveryStls from './sections/delivery.module.css';
+import FooterStls from './sections/footer.module.css';
 
 export default base;
-export { NavbarStls, MenuItemStls, CustomButtonStls, QuantityBarStls, HeaderStls, MenuStls, AboutStls, ContactStls };
+export {
+	NavbarStls,
+	MenuItemStls,
+	CustomButtonStls,
+	QuantityBarStls,
+	HeaderStls,
+	MenuStls,
+	AboutStls,
+	ContactStls,
+	DeliveryStls,
+	FooterStls,
+};
