@@ -5,6 +5,8 @@ import { toggle as toggleCart, selectCart } from '../features/cart/cartSlice';
 import { Cart } from '../features/cart/Cart';
 import { Link as ScrollLink } from 'react-scroll';
 
+import Links from './Links';
+
 import { MdShoppingBasket, MdMenu, MdClose } from 'react-icons/md';
 
 import { NavbarStls as styles } from '../styles';
@@ -16,26 +18,6 @@ function Header() {
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	const toggleMenu = (state) => setMenuOpen(state);
-
-	const links = [
-		{
-			url: 'menu',
-			content: 'Menu',
-		},
-		{
-			url: 'about',
-			content: 'About',
-		},
-		{
-			url: 'delivery',
-			content: 'Delivery',
-		},
-		{
-			url: 'contact',
-			content: 'Contact',
-		},
-	];
-
 	return (
 		<header className={styles.header}>
 			<Link className={styles.header__logo} to='/'>
@@ -43,7 +25,7 @@ function Header() {
 				<span className={styles.logo__text}>CheesyPizza</span>
 			</Link>
 			<nav className={menuOpen ? `${styles.mobile__links} ${styles.header__links}` : styles.header__links}>
-				{links.map((link, key) => (
+				{Links.map((link, key) => (
 					<ScrollLink
 						key={key}
 						className={styles.link}

@@ -5,12 +5,12 @@
 	justify-content: center;
 	justify-items: center;
 	margin: 4rem auto;
-	padding: 4rem;
+	padding: 10rem 4rem;
 	background: var(--black);
 }
 
 .title {
-	font-size: 5rem;
+	font-size: var(--h2);
 	font-weight: 700;
 	text-shadow: 0.3rem 0.4rem 0.3rem var(--black);
 }

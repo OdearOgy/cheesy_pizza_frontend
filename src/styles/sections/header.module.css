@@ -7,7 +7,7 @@
 	height: 90vh;
 	padding: 2rem 7rem;
 
-	background: var(--ligth-black);
+	background: var(--light-black);
 }
 
 .head__text {
@@ -24,12 +24,12 @@
 .title {
 	font-family: 'Fira Sans';
 	font-weight: 700;
-	font-size: 6rem;
+	font-size: var(--h1);
 	text-shadow: 0.3rem 0.4rem 0.3rem var(--black);
 }
 
 .description {
-	font-size: 2rem;
+	font-size: var(--small-text);
 }
 
 .head__img {

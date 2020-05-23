@@ -17,9 +17,9 @@ const Contact = () => {
 
 			<div className={styles.contact__card}>
 				<h2 className={styles.card__title}>Contacts</h2>
-				<h3 className={styles.title}>Our Address:</h3>
-				<p className={styles.description}>Achajour Lovers' Park 21 M. Baghramyan Avenue, Yerevan 0019</p>
-				<h3 className={styles.title}>Our Work Hours:</h3>
+				<h4 className={styles.title}>Address:</h4>
+				<p className={styles.description}>Achajour Lover's Park 21 M. Baghramyan Avenue, Yerevan 0019</p>
+				<h4 className={styles.title}>Work Hours:</h4>
 				<p className={styles.description}> Mon-Sun, 9:00 A.M. - 11:00 P.M.</p>
 			</div>
 		</section>
