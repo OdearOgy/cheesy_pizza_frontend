@@ -1,12 +1,12 @@
 import React from 'react';
 import { AboutStls as styles } from '../styles';
-import { Pizza_2 } from '../assets/images';
+import { Pizza_8 } from '../assets/images';
 
 const About = () => {
 	return (
 		<section className={styles.about} id='about'>
 			<div className={styles.about__img}>
-				<img src={Pizza_2} alt='a cheesy pizza' />
+				<img src={Pizza_8} alt='a cheesy pizza' />
 			</div>
 			<div className={styles.about__text}>
 				<h2 className={styles.title}>About Us</h2>

@@ -1,0 +1,80 @@
+.contact {
+	padding: 2rem 0;
+	position: relative;
+}
+
+.map {
+	margin: 2rem auto;
+	width: 100%;
+	border: none;
+	filter: drop-shadow(0.2rem 0.2rem 0.5rem var(--light-black));
+	-webkit-filter: drop-shadow(0.2rem 0.2rem 0.5rem var(--light-black));
+}
+
+.contact__card {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background: var(--black);
+	opacity: 0.98;
+	z-index: 2;
+	width: 70vw;
+	height: 60vh;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	border-radius: 1rem;
+	-webkit-border-radius: 1rem;
+	-moz-border-radius: 1rem;
+	-ms-border-radius: 1rem;
+	-o-border-radius: 1rem;
+	filter: drop-shadow(0.2rem 0.2rem 0.4rem var(--black));
+	-webkit-filter: drop-shadow(0.2rem 0.2rem 0.4rem var(--black));
+	padding: 5rem;
+	text-shadow: 0.2rem 0.4rem 0.4rem var(--black);
+	overflow: hidden;
+}
+
+.contact__card::after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 10%;
+	left: 30%;
+	background-image: url('../../assets/images/pizzas/pizza_1.png');
+	opacity: 0.4;
+}
+
+.card__title {
+	font-size: 3rem;
+	line-height: 3;
+}
+
+.title {
+	padding: 0.5rem;
+	font-size: 2.2rem;
+	line-height: 2;
+}
+
+.description {
+	padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+	font-size: 1.4rem;
+	line-height: 1.5;
+	font-weight: 600;
+}
+
+@media (min-width: 1640px) {
+	.contact__card {
+		width: 30vw;
+		height: 50vh;
+		transform: translate(-80%, -50%);
+		-webkit-transform: translate(-80%, -50%);
+		-moz-transform: translate(-80%, -50%);
+		-ms-transform: translate(-80%, -50%);
+		-o-transform: translate(-80%, -50%);
+	}
+}
