@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toggle as toggleCart, selectCart } from '../features/cart/cartSlice';
 import { Cart } from '../features/cart/Cart';
+import { Link as ScrollLink } from 'react-scroll';
+
 import { MdShoppingBasket, MdMenu, MdClose } from 'react-icons/md';
 
 import { NavbarStls as styles } from '../styles';
@@ -17,19 +19,19 @@ function Header() {
 
 	const links = [
 		{
-			url: '/menu',
+			url: 'menu',
 			content: 'Menu',
 		},
 		{
-			url: '/about',
+			url: 'about',
 			content: 'About',
 		},
 		{
-			url: '/delivery',
+			url: 'delivery',
 			content: 'Delivery',
 		},
 		{
-			url: '/contact',
+			url: 'contact',
 			content: 'Contact',
 		},
 	];
@@ -42,9 +44,16 @@ function Header() {
 			</Link>
 			<nav className={menuOpen ? `${styles.mobile__links} ${styles.header__links}` : styles.header__links}>
 				{links.map((link, key) => (
-					<Link key={key} className={styles.link} to={link.url} onClick={() => toggleMenu(false)}>
+					<ScrollLink
+						key={key}
+						className={styles.link}
+						spy={true}
+						smooth={true}
+						duration={500}
+						to={link.url}
+						onClick={() => toggleMenu(false)}>
 						{link.content}
-					</Link>
+					</ScrollLink>
 				))}
 
 				<button className={`${styles.nav__hamburger} ${styles.nav__close}`} onClick={() => toggleMenu(false)}>

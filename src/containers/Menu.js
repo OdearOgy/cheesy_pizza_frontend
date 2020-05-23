@@ -14,7 +14,7 @@ const Menu = () => {
 	}, [data]);
 
 	return (
-		<section className={styles.menu}>
+		<section className={styles.menu} id='menu'>
 			<h2 className={styles.title}>The Cheesy Menu</h2>
 			{items.length > 0 ? (
 				<>
@@ -23,7 +23,7 @@ const Menu = () => {
 							<MenuItem key={key} {...item} quantity={1} />
 						))}
 					</div>
-					<CustomButton className={styles.show__menu} content='Show more' />
+					{/* <CustomButton className={styles.show__menu} content='Show more' /> */}
 				</>
 			) : (
 				<h3>Nothing to display</h3>

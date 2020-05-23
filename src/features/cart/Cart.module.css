@@ -212,7 +212,8 @@
 	}
 
 	.item {
-		grid-template: 'img img' 1fr 'delete delete' 0.2fr 'text text' 1fr / 1fr;
+		grid-template: 'img img' 1fr 'delete delete' 0.8fr 'text text' 0.5fr / 1fr;
+		row-gap: 0.2rem;
 		position: relative;
 	}
 
@@ -227,7 +228,7 @@
 
 	.remove__btn {
 		justify-self: center;
-		align-self: flex-start;
+		align-self: center;
 		transform: scale(2);
 		-webkit-transform: scale(2);
 		-moz-transform: scale(2);
