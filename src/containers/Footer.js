@@ -10,30 +10,16 @@ const Footer = () => {
 		<footer className={styles.footer}>
 			<div className={styles.footer__links}>
 				{Links.map((link, key) => (
-					<ScrollLink
-						key={key}
-						className={styles.link}
-						spy={true}
-						smooth={true}
-						duration={500}
-						to={link.url}>
+					<ScrollLink key={key} className={styles.link} spy={true} smooth={true} duration={500} to={link.url}>
 						{link.content}
 					</ScrollLink>
 				))}
 			</div>
 			<div className={styles.social__links}>
-				<a
-					className={styles.link}
-					href='https://www.linkedin.com/in/odearogy'
-					target='_blank'
-					rel='noopener noreferrer'>
+				<a className={styles.link} href='https://www.linkedin.com/in/odearogy' target='_blank'>
 					<FaLinkedin />
 				</a>
-				<a
-					className={styles.link}
-					href='https://github.com/odearogy'
-					target='_blank'
-					rel='noopener noreferrer'>
+				<a className={styles.link} href='https://github.com/odearogy' target='_blank'>
 					<FaGithub />
 				</a>
 			</div>
