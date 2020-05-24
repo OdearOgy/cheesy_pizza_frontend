@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useApi } from '../app/api';
 
-import { MenuItem, CustomButton } from '../components';
+import { MenuItem } from '../components';
 
 import { MenuStls as styles } from '../styles';
 
@@ -23,7 +23,6 @@ const Menu = () => {
 							<MenuItem key={key} {...item} quantity={1} />
 						))}
 					</div>
-					{/* <CustomButton className={styles.show__menu} content='Show more' /> */}
 				</>
 			) : (
 				<h3>Nothing to display</h3>
