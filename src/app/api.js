@@ -1,18 +1,33 @@
 import { useEffect, useState } from 'react';
 
-import { ServerHost } from './settings';
+import { ApiHost } from './settings';
 import Axios from 'axios';
 
-export function useApi(url, method = 'GET') {
+const defaultOptions = {
+	method: 'GET',
+};
+
+export function useApi(endpoint, options = defaultOptions) {
 	const [data, setData] = useState([]);
+	const { method } = options;
+
+	const url = `${ApiHost}/${endpoint}`;
 
 	useEffect(() => {
-		if (method === 'GET') {
-			Axios.get(`${ServerHost}/${url}`).then((res) => {
-				setData(res.data);
-			});
+		switch (method) {
+			case 'POST':
+				break;
+			default:
+				Axios.get(url)
+					.then((res) => {
+						setData(res.data);
+					})
+					.catch((err) => {
+						console.warn(`Check your URL and Options: \nurl: ${url} \nOptions:`);
+						console.table(options);
+					});
 		}
-	}, [method, url]);
+	}, [method, url, options]);
 
 	return data;
 }

@@ -16,9 +16,12 @@
 	left: 50%;
 	background: var(--black);
 	opacity: 0.98;
-	z-index: 2;
+	z-index: 1;
 	width: 70vw;
 	height: 60vh;
+	max-width: 70rem;
+	max-height: 55rem;
+
 	transform: translate(-50%, -50%);
 	-webkit-transform: translate(-50%, -50%);
 	-moz-transform: translate(-50%, -50%);
