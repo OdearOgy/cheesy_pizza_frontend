@@ -3,12 +3,14 @@ a {
 }
 
 .header {
-	line-height: 9rem;
 	display: grid;
 	align-items: center;
 	justify-content: space-between;
 	grid-template-columns: 0.5fr 1fr 0.2fr;
 	grid-template-areas: 'logo links cart';
+	line-height: 9rem;
+
+	background: var(--light-black);
 	font-size: var(--small-text);
 	padding: 2rem 7rem;
 }
