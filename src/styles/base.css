@@ -30,6 +30,7 @@
 	--white: #ffffff;
 	--black: #292929;
 	--light-black: #3a373e;
+	--light-grey: #cecece;
 	--light-red-orange: #e2842e;
 	--dark-red-orange: #bb5320;
 	--pale-yellow: #f3d18e;
@@ -43,8 +44,8 @@
 }
 
 body {
-	font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
-		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background: var(--light-black);

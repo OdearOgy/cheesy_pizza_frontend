@@ -1,5 +1,6 @@
 // The initial css for reset
-import base from './_base.css';
+import base from './base.css';
+import AppStls from './app.module.css';
 // Components
 import NavbarStls from './navbar.module.css';
 import MenuItemStls from './menu-item.module.css';
@@ -26,4 +27,5 @@ export {
 	ContactStls,
 	DeliveryStls,
 	FooterStls,
+	AppStls,
 };

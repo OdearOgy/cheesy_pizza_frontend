@@ -1,15 +1,14 @@
 import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
+import { LandingPage, CheckoutPage } from './pages';
 
-import { Navbar } from './components';
-import { LandingPage } from './pages';
+import { AppStls as styles } from './styles';
 
 function App() {
 	return (
-		<div className='App'>
-			<Navbar />
+		<div className={styles.app}>
 			<Switch>
-				<Route exact path='/' component={LandingPage}></Route>
+				<Route exact path='/' component={LandingPage} />
 			</Switch>
 		</div>
 	);
