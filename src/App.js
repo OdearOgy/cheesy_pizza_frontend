@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
-import { LandingPage, CheckoutPage } from './pages';
+import { LandingPage } from './pages';
 
 import { AppStls as styles } from './styles';
 
