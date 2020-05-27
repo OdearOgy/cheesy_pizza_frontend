@@ -1,10 +1,9 @@
 import React from 'react';
 import { CustomButtonStls as styles } from '../styles';
 
-const CustomButton = (props) => {
-	const { content, className, handleClick } = props;
+const CustomButton = ({ content, className, handleClick, ...props }) => {
 	return (
-		<button onClick={handleClick} className={`${styles.custom__btn} ${className || ''}`}>
+		<button onClick={handleClick} className={`${styles.custom__btn} ${className || ''}`} {...props}>
 			{content}
 		</button>
 	);
