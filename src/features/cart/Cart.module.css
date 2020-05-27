@@ -4,7 +4,7 @@
 	grid-template-areas: 'header' 'items' 'footer';
 	justify-items: center;
 	position: absolute;
-	z-index: 3;
+	z-index: 2;
 	right: 0;
 	top: 80%;
 	transform: translate(0%, 10%);
@@ -103,7 +103,6 @@
 
 .remove__btn,
 .close__btn {
-	background: var(--black);
 	color: currentColor;
 	border: none;
 	background: transparent;

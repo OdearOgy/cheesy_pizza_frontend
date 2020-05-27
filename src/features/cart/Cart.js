@@ -1,6 +1,14 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectCart, selectTotalPrice, selectOpenState, toggle as toggleCart, clear as clearCart } from './cartSlice';
+import {
+	selectCart,
+	selectTotalPrice,
+	selectOpenState,
+	toggle as toggleCart,
+	clear as clearCart,
+} from './cartSlice';
+
+import { toggle as toggleCheckout } from '../order/orderSlice';
 import CartItem from './CartItem';
 
 import { CustomButton } from '../../components';
@@ -12,6 +20,7 @@ export function Cart() {
 	const totalPrice = useSelector(selectTotalPrice);
 	const isOpen = useSelector(selectOpenState);
 	const dispatch = useDispatch();
+
 	return (
 		<div className={isOpen ? styles.cart__open : styles.cart__closed}>
 			<div className={styles.cart__header}>
@@ -40,7 +49,11 @@ export function Cart() {
 							<button className={styles.clear__btn} onClick={() => dispatch(clearCart())}>
 								Clear Cart
 							</button>
-							<CustomButton className={styles.order__btn} content='Order' />
+							<CustomButton
+								handleClick={() => dispatch(toggleCheckout({ modal: 'checkout' }))}
+								className={styles.order__btn}
+								content='Checkout'
+							/>
 						</div>
 					</div>
 				</>
