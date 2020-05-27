@@ -8,7 +8,7 @@ export const orderSlice = createSlice({
 	initialState: {
 		orders: initialStorageOrders || [],
 		deliveryInfo: initialStorageDelInfo || {},
-		checkoutIsOpen: true,
+		checkoutIsOpen: false,
 		ordersIsOpen: false,
 	},
 
