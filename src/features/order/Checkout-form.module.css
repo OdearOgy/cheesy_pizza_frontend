@@ -1,0 +1,140 @@
+.checkout__form {
+	margin: auto;
+	width: 80%;
+	display: grid;
+	grid-template-areas: 'name' 'phone' 'address' 'payment' 'comments' 'action__btns';
+	grid-template-columns: 100%;
+	place-items: flex-start center;
+	place-content: center;
+	column-gap: 5rem;
+}
+
+.input__label {
+	font-size: 2rem;
+	margin: 2rem;
+	width: 100%;
+	filter: drop-shadow(0.1rem 0.1rem 0.2rem var(--light-black));
+	-webkit-filter: drop-shadow(0.1rem 0.1rem 0.2rem var(--light-black));
+}
+
+.input__field {
+	width: inherit;
+	font-size: 2rem;
+	line-height: 1.2;
+	margin: 1rem 0.5rem;
+	padding: 1.5rem 1rem;
+	background: var(--light-black);
+	color: currentColor;
+	border: none;
+	border-bottom: 0.4rem solid var(--pale-yellow);
+	transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	border-radius: 0.2rem;
+	-webkit-border-radius: 0.2rem;
+	-moz-border-radius: 0.2rem;
+	-ms-border-radius: 0.2rem;
+	-o-border-radius: 0.2rem;
+}
+
+.input__field:focus {
+	background: var(--white);
+	color: var(--black);
+	border-color: var(--light-red-orange);
+}
+
+.address__label,
+.name__label,
+.phone__label,
+.payment__label,
+.comments__label,
+.action__btns {
+	composes: input__label;
+}
+
+.address__field,
+.name__field,
+.phone__field,
+.payment__field,
+.comments__field {
+	composes: input__field;
+}
+
+.comments__field {
+	height: 10rem;
+	resize: none;
+}
+
+.address__label {
+	grid-area: address;
+}
+
+.name__label {
+	grid-area: name;
+}
+
+.phone__label {
+	grid-area: phone;
+}
+
+.payment__label {
+	grid-area: payment;
+}
+
+.comments__label {
+	grid-area: comments;
+}
+
+.error {
+	color: var(--dark-red-orange);
+	font-size: 1.5rem;
+}
+
+.action__btns {
+	grid-area: action__btns;
+	display: grid;
+	grid-template-areas: 'remember__btn remember__btn' 'cancel__btn order__btn';
+	grid-template-columns: 1fr 6fr;
+	grid-template-rows: 1fr 1fr;
+	justify-items: end;
+}
+
+.remember__label {
+	grid-area: remember__btn;
+	cursor: pointer;
+	display: grid;
+	grid-template-columns: 1.5fr 0.5fr;
+	column-gap: 2rem;
+}
+
+.remember__btn {
+	width: 3rem;
+	height: 3rem;
+	cursor: inherit;
+}
+
+.cancel__btn {
+	composes: clear__btn from '../cart/Cart.module.css';
+	color: var(--black);
+	grid-area: cancel__btn;
+}
+
+.order__btn {
+	grid-area: order__btn;
+}
+
+@media (min-width: 992px) {
+	.checkout__form {
+		grid-template-areas: 'name phone' 'address address' 'payment comments' 'action__btns action__btns';
+		grid-template-columns: auto;
+	}
+
+	.order__btn {
+		/* position: absolute;
+		bottom: -7.5%;
+		left: 50%;
+		transform: translate(-50%, -91.5%); */
+	}
+}
