@@ -9,36 +9,20 @@ export const orderSlice = createSlice({
 		orders: initialStorageOrders || [],
 		deliveryInfo: initialStorageDelInfo || {},
 		checkoutIsOpen: false,
-		ordersIsOpen: false,
 	},
 
 	reducers: {
 		make: (state, action) => {
 			const { delInfo, orders } = action.payload;
-			const order = {
-				deliveryDetails: delInfo,
-				items: orders,
-			};
-
 			if (delInfo.rememberMe) {
 				localStorage.setItem('deliveryInfo', JSON.stringify(delInfo));
 			}
-			state.orders.push(order);
+			state.orders.push(orders);
 			localStorage.setItem('orders', JSON.stringify(state.orders));
 		},
 
-		toggle: (state, action) => {
-			const { modal } = action.payload;
-			switch (modal) {
-				case 'orders':
-					state.ordersIsOpen = !state.ordersIsOpen;
-					break;
-				case 'checkout':
-					state.checkoutIsOpen = !state.checkoutIsOpen;
-					break;
-				default:
-					break;
-			}
+		toggle: (state) => {
+			state.checkoutIsOpen = !state.checkoutIsOpen;
 		},
 	},
 });
