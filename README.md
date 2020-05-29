@@ -59,12 +59,10 @@ Here is the folder structure, but it might get changed by the time.
 
 ## ToDo
 
-- [] Add `/order/:order_slug/` route and the page
+- [x] Add `/order/:order_slug/` route and the page
 
-- [] Add 'order delivery confirmation' modal
+- [] Implement notification modals
 
 - [] Add user profiles
-
-- [] Extend the useApi hook
 
 - [] Add UI Testing
