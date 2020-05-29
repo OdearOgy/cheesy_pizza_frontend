@@ -2,8 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialStorageCart = JSON.parse(localStorage.getItem('cart'));
 
-function calculateTotalPrice(cartItems) {
+function calcTotalPrice(cartItems) {
 	let totalPrice = 0;
+	const delFee = calcDeliveryFee(cartItems);
 	if (cartItems) {
 		cartItems.forEach((item) => {
 			totalPrice += item.price * item.quantity;
@@ -11,7 +12,19 @@ function calculateTotalPrice(cartItems) {
 	} else {
 		totalPrice = 0;
 	}
-	return totalPrice;
+	return Number((totalPrice + delFee).toFixed(2));
+}
+
+function calcDeliveryFee(cartItems) {
+	let delFee = 0;
+
+	if (cartItems) {
+		cartItems.forEach((item) => {
+			delFee += (item.price * item.slices * item.quantity) / 100;
+		});
+	}
+
+	return Number(delFee.toFixed(2));
 }
 
 const getItemIndex = (items, slug) => items.findIndex((item) => item.slug === slug);
@@ -20,7 +33,8 @@ export const cartSlice = createSlice({
 	name: 'cart',
 	initialState: {
 		items: initialStorageCart || [],
-		totalPrice: calculateTotalPrice(initialStorageCart),
+		totalPrice: calcTotalPrice(initialStorageCart),
+		deliveryFee: calcDeliveryFee(initialStorageCart),
 		isOpen: false,
 	},
 
@@ -38,7 +52,8 @@ export const cartSlice = createSlice({
 				state.items.push(item);
 			}
 
-			state.totalPrice = calculateTotalPrice(state.items);
+			state.deliveryFee = calcDeliveryFee(state.items);
+			state.totalPrice = calcTotalPrice(state.items);
 			localStorage.setItem('cart', JSON.stringify(state.items));
 		},
 
@@ -47,7 +62,7 @@ export const cartSlice = createSlice({
 			const index = getItemIndex(state.items, slug);
 
 			state.items.splice(index, 1);
-			state.totalPrice = calculateTotalPrice(state.items);
+			state.totalPrice = calcTotalPrice(state.items);
 			localStorage.setItem('cart', JSON.stringify(state.items));
 		},
 
@@ -56,7 +71,8 @@ export const cartSlice = createSlice({
 			const index = getItemIndex(state.items, item.slug);
 
 			state.items[index].quantity = quantity;
-			state.totalPrice = calculateTotalPrice(state.items);
+			state.deliveryFee = calcDeliveryFee(state.items);
+			state.totalPrice = calcTotalPrice(state.items);
 			localStorage.setItem('cart', JSON.stringify(state.items));
 		},
 
@@ -75,6 +91,7 @@ export const { add, remove, changeQuantity, toggle, clear } = cartSlice.actions;
 
 export const selectCart = (state) => state.cart.items;
 export const selectTotalPrice = (state) => state.cart.totalPrice;
+export const selectDeliveryFee = (state) => state.cart.deliveryFee;
 export const selectOpenState = (state) => state.cart.isOpen;
 
 export default cartSlice.reducer;
