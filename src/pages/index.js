@@ -1,3 +1,4 @@
 import LandingPage from './LandingPage';
+import OrderPage from './OrderPage';
 
-export { LandingPage };
+export { LandingPage, OrderPage };

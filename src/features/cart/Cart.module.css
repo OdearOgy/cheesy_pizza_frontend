@@ -129,6 +129,9 @@
 	justify-self: stretch;
 	margin: 0 4rem;
 	border-top: 0.2rem solid var(--pale-yellow);
+	display: grid;
+	font-size: var(--small-text);
+	line-height: 4rem;
 }
 
 .cart__btns {

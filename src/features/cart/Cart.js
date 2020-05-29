@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
 	selectCart,
 	selectTotalPrice,
+	selectDeliveryFee,
 	selectOpenState,
 	toggle as toggleCart,
 	clear as clearCart,
@@ -18,6 +19,7 @@ import { MdClose } from 'react-icons/md';
 export function Cart() {
 	const cart = useSelector(selectCart);
 	const totalPrice = useSelector(selectTotalPrice);
+	const deliveryFee = useSelector(selectDeliveryFee);
 	const isOpen = useSelector(selectOpenState);
 	const dispatch = useDispatch();
 
@@ -42,15 +44,16 @@ export function Cart() {
 					</div>
 					<div className={styles.cart__footer}>
 						<div className={styles.total__info}>
-							<span>Total: </span>
-							<span className={styles.total__price}> ${totalPrice} </span>
+							<span className={styles.delivery__fee}>Delivery fee: ${deliveryFee}</span>
+
+							<span className={styles.total__price}>Total: ${totalPrice}</span>
 						</div>
 						<div className={styles.cart__btns}>
 							<button className={styles.clear__btn} onClick={() => dispatch(clearCart())}>
 								Clear Cart
 							</button>
 							<CustomButton
-								handleClick={() => dispatch(toggleCheckout({ modal: 'checkout' }))}
+								handleClick={() => dispatch(toggleCheckout())}
 								className={styles.order__btn}
 								content='Checkout'
 							/>
