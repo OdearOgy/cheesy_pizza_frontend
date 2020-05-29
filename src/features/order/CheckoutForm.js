@@ -18,6 +18,7 @@ const checkoutValidation = Yup.object({
 		.required('Phone number is required'),
 	comments: Yup.string().max(80, 'Must be 80 or less characters'),
 	address: Yup.string().required('Address is required'),
+	payment: Yup.string().required('Payment method is required'),
 });
 
 const CheckoutForm = ({ handleCheckout, handleCancel, totalPrice }) => {
